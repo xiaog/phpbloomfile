@@ -1,0 +1,8 @@
+bloom_filter.lo: /home/gcb/Documents/php/php-src/ext/bloom_filter/bloom_filter.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/gcb/Documents/php/php-src/ext/bloom_filter $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/gcb/Documents/php/php-src/ext/bloom_filter/bloom_filter.c -o bloom_filter.lo 
+$(phplibdir)/bloom_filter.la: ./bloom_filter.la
+	$(LIBTOOL) --mode=install cp ./bloom_filter.la $(phplibdir)
+
+./bloom_filter.la: $(shared_objects_bloom_filter) $(BLOOM_FILTER_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_bloom_filter) $(BLOOM_FILTER_SHARED_LIBADD)
+
