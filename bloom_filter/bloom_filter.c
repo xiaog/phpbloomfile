@@ -171,6 +171,44 @@ PHP_FUNCTION(confirm_bloom_filter_compiled)
    follow this convention for the convenience of others editing your code.
 */
 
+/*
+*bloom_filter init function 
+*/
+PHP_FUNCTION(bloom_filter)
+{
+
+
+}
+
+
+/*
+* bloom_filter find function 
+*/
+
+PHP_FUNCTION(bloom_filter_find)
+{
+
+
+
+}
+/*
+*bloom_file_clear 
+ **/
+PHP_FUNCTION(bloom_filter_clear)
+{
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 /*
  * Local variables:
