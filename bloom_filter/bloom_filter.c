@@ -40,6 +40,8 @@ static int le_bloom_filter;
  */
 const zend_function_entry bloom_filter_functions[] = {
 	PHP_FE(confirm_bloom_filter_compiled,	NULL)		/* For testing, remove later. */
+        PHP_FE(bloom_filter, NULL)
+        PHP_FE(bloom_find,NULL)
 	PHP_FE_END	/* Must be the last line in bloom_filter_functions[] */
 };
 /* }}} */
@@ -135,6 +137,8 @@ PHP_MINFO_FUNCTION(bloom_filter)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "bloom_filter support", "enabled");
+	php_info_print_table_header(2,"Version","1.01");
+	php_info_print_table_header(2,"Author","xiaog");
 	php_info_print_table_end();
 
 	/* Remove comments if you have entries in php.ini
